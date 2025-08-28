@@ -68,6 +68,7 @@ def test_shopping(driver):
     price_total = driver.find_element(
         By.CSS_SELECTOR, "div.summary_total_label").text
     price_value = float(price_total.split("$")[1])
-    assert price_value == 58.29
+    assert price_value == 58.29, f"Итоговая сумма должна быть 58.29, "
+    "а получена {price_value}"
 
     driver.quit()

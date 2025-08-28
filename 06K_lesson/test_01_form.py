@@ -65,5 +65,5 @@ def test_form(driver):
     for field_name in fields:
         element_color = driver.find_element(
             By.ID, field_name).value_of_css_property("background-color")
-    assert element_color == "rgba(209, 231, "
-    " 221, 1)", "First name field is not highlighted in green"
+        assert element_color == "rgba(209, 231, 221, 1)", \
+        "First name field is not highlighted in green"

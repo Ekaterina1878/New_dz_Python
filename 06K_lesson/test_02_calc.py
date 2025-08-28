@@ -37,4 +37,3 @@ def test_calculator(driver):
     res = driver.find_element(By.CSS_SELECTOR, ".screen").text
     assert res == "15"
 
-    driver.quit()
