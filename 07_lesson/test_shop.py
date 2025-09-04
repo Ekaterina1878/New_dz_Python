@@ -1,9 +1,9 @@
 import pytest
 from selenium import webdriver
-from Autorize import AuthorizationPage
-from ListShopping import ShoppingPage
-from Cart import CartPage
-from OrderForm import FormPage
+from autorize import AuthorizationPage
+from shopping_page import ShoppingPage
+from cart_page import CartPage
+from order_form import FormPage
 
 
 @pytest.fixture
@@ -30,4 +30,4 @@ def test_shop(driver):
     form_input.button_continui()
     form_input.price()
     price_value = form_input.price()
-    assert price_value == 58.29
+    assert price_value == 58.29, f"Ожидали 58.29, но получили {price_value}"
