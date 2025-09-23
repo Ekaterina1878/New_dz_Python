@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from SubjectPage import SubjectPage
+from subject_page import SubjectPage
 
 db_connection_string = "postgresql://postgres:здесь должен быть пароль@localhost:5432/QA"
 db = create_engine(db_connection_string)
