@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"f6b6c8ce05d5b46636adef79de7ba3c9","name":"test_subject","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"a44db95d1e2e7a78c1e37f6199f5716a","name":"Тесты на работу с предметами","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
