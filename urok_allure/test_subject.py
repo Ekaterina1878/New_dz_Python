@@ -1,3 +1,4 @@
+import allure
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -15,13 +16,24 @@ def db_session():
     session.close()
 
 
+@allure.suite("Тесты на работу с предметами")
+@allure.epic("Предметы")
+@allure.severity("blocker")
+
+@allure.story("Создание предмета")
+@allure.feature("CREATE")
+@allure.title("Создание нового предмета")
 def test_insert(db_session):
     subject_page = SubjectPage(db_session)
     subject_page.insert_subject('Astronomiya', 21)
     result = subject_page.get_subject('Astronomiya')
-    assert result is not None
+    with allure.step("Проверили, что предмет создался"):
+        assert result is not None
 
 
+@allure.story("Изменение предмета")
+@allure.feature("UPDATE")
+@allure.title("Корректировка названия предмета")
 def test_update(db_session):
     subject_page = SubjectPage(db_session)
     subject_page.update_subject(21, 'Finance')
@@ -30,6 +42,9 @@ def test_update(db_session):
     assert res['subject_title'] == 'Finance'
 
 
+@allure.story("Удаление предмета")
+@allure.feature("delete")
+@allure.title("Удаление ненужного предмета")
 def test_delete(db_session):
     subject_page = SubjectPage(db_session)
     subject_page.delete_subject('Finance')

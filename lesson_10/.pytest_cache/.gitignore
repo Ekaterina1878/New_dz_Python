@@ -1,0 +1,5 @@
+# Created by pytest automatically.
+__pychache__
+.pytest_cache
+allure-results
+
